@@ -1,0 +1,8 @@
+#!/sbin/busybox sh
+
+export BOOTREC_LED_RED="/sys/class/leds/R/brightness"
+export BOOTREC_LED_GREEN="/sys/class/leds/G/brightness"
+export BOOTREC_LED_BLUE="/sys/class/leds/B/brightness"
+export BOOTREC_FOTA_NODE="/dev/block/mmcblk0p16 b 179 16"
+export BOOTREC_FOTA="/dev/block/mmcblk0p16"
+
