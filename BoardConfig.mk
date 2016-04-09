@@ -14,6 +14,7 @@
 
 include device/sony/kanuti/PlatformConfig.mk
 
+TARGET_SPECIFIC_HEADER_PATH += device/sony/tulip/include
 TARGET_BOOTLOADER_BOARD_NAME := E2303
 
 BOARD_KERNEL_CMDLINE += androidboot.hardware=tulip

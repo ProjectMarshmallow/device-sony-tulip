@@ -17,16 +17,9 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 PRODUCT_COPY_FILES := \
     device/sony/tulip/rootdir/system/etc/sensor/sensord_cfg_axis.txt:system/etc/sensor/sensord_cfg_axis.txt \
-    device/sony/tulip/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
     device/sony/tulip/rootdir/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/sony/tulip/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     device/sony/tulip/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml
-
-# Device Specific Permissions
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml
 
 # Device Init
 PRODUCT_PACKAGES += \
@@ -44,12 +37,26 @@ PRODUCT_PACKAGES += \
 
 # NFC config
 PRODUCT_PACKAGES += \
-    nfc_nci.pn54x.default
+    nfc_nci.tulip
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREBUILT_DPI := xhdpi hdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    service.adb.root=1 \
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    ro.allow.mock.location=1 \
+    ro.debuggable=1
+
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    service.adb.root=1 \
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    ro.allow.mock.location=1 \
+    ro.debuggable=1 
+ 
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.sf.lcd_density=320 \
     ro.usb.pid_suffix=1C4
