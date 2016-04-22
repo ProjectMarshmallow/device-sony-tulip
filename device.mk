@@ -35,9 +35,23 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.tulip
 
-# NFC config
+#PRODUCT_PACKAGES += \
+#    libnfc \
+#    libnfc_jni \
+#    Nfc \
+#    Tag \
+#    com.android.nfc_extras
+
 PRODUCT_PACKAGES += \
-    nfc_nci.tulip
+    com.android.nfc_extras \
+    libnfc-nci \
+    nfc_nci.pn54x.default \
+    NfcNci \
+    Tag 
+
+# NFC config
+#PRODUCT_PACKAGES += \
+#    nfc_nci.pn54x.default
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREBUILT_DPI := xhdpi hdpi
